@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/fragmentA">
+
+    <fragment
+        android:id="@+id/fragmentA"
+        android:name="com.nsa.navigation.ui.FragmentA"
+        android:label="fragment_a"
+        tools:layout="@layout/fragment_a" >
+        <action
+            android:id="@+id/actionAtoB"
+            app:destination="@id/fragmentB"
+            app:popUpTo="@+id/fragmentA"
+            app:launchSingleTop="true"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentB"
+        android:name="com.nsa.navigation.ui.FragmentB"
+        android:label="fragment_b"
+        tools:layout="@layout/fragment_b" >
+        <action
+            android:id="@+id/actionBtoD"
+            app:destination="@id/fragmentD"
+            app:popUpTo="@+id/fragmentB"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentD"
+        android:name="com.nsa.navigation.ui.FragmentD"
+        android:label="fragment_d"
+        tools:layout="@layout/fragment_d"
+        >
+        <action
+            android:id="@+id/actionDtoC"
+            app:destination="@id/fragmentC"
+
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+
+            />
+        <action
+            android:id="@+id/actionDtoA"
+            app:destination="@id/fragmentA"
+
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/slide_out"
+           />
+        <action
+            android:id="@+id/actionDtoB"
+            app:destination="@id/fragmentB"
+
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/slide_out"
+           />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentC"
+        android:name="com.nsa.navigation.ui.FragmentC"
+        android:label="fragment_c"
+        tools:layout="@layout/fragment_c" >
+        <action
+            android:id="@+id/actionCtoD"
+            app:destination="@id/fragmentD"
+            app:enterAnim="@anim/fade_in"
+            app:launchSingleTop="true"
+            app:exitAnim="@anim/slide_out"
+            app:popUpTo="@+id/fragmentC"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
